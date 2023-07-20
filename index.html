@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="frontend/css/w3.css" type="text/css" rel="stylesheet">
+    <link href="frontend/css/main.css" type="text/css" rel="stylesheet">
+    <title>Emoji Quiz</title>
+    <script src="frontend/js/main.js"></script>
+
+    <template id="templ-emoji">
+        <div class="w3-col m1 s2 glyph"></div>
+    </template>
+</head>
+<body class="w3-container w3-center">
+    <header class="w3-container w3-margin">
+        <h1>Emoji Quiz 😜</h1>
+    </header>
+
+    <main>
+        <article>
+            <div class="w3-row-padding w3-center w3-border w3-border-gray w3-round-xlarge" style="margin: auto; margin-bottom:5rem; width:80%; font-size: 5rem; ">
+                <div 
+                    class="w3-col m11 s10" 
+                    id="current"
+                    style="font-family: 'NotoColorEmoji', sans-serif;">
+                    &nbsp;
+                </div>
+                <div 
+                    class="w3-col m1 s2"
+                    id="clearButton">
+                    &times;
+                </div>
+            </div>
+            <div class="w3-row-padding" id="emoji-list" style="margin-left: 3rem; margin-right: 3rem;">
+            </div>
+        </article>
+    </main>
+</body>
+</html>

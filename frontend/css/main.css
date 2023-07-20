@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "NotoColorEmoji";
+    src:
+      url("NotoColorEmoji-Regular.woff2") format("woff2");
+  }
+  
+div.glyph {
+    font-family: "NotoColorEmoji", sans-serif;
+    font-size: 2rem;
+}
