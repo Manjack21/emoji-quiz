@@ -21,6 +21,18 @@ switch($route[0])
                 break;
         }
         break;
+    case "categories":
+        switch($_SERVER["REQUEST_METHOD"])
+        {
+            case "GET":  
+                include "backend/src/actions/listCategories.php";
+                break;
+            default:
+                http_response_code(405);
+                echo("Method not allowed");                
+                break;
+        }
+        break;
 }
 
 
