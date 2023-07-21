@@ -3,9 +3,7 @@ include_once "backend/src/db.php";
 
 $db = new EmojiDB();
 
-$fileName = pathinfo($_SERVER['SCRIPT_FILENAME'], PATHINFO_BASENAME);
-$route = explode('/', trim(str_after($_SERVER['PHP_SELF'], $fileName), '/'));
-
+$route = explode('/', trim($_SERVER['PATH_INFO'], '/'));
 
 switch($route[0])
 {
