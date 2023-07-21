@@ -6,7 +6,11 @@ window.addEventListener("load", async function (ev) {
     const targetLabel = this.document.getElementById("current");
     function appendIcon(ev)
     {
-        targetLabel.appendChild(document.createTextNode(ev.target.innerText));
+        const glyphSpan = document.createElement("span");
+        glyphSpan.innerHTML = ev.target.innerText;
+        glyphSpan.addEventListener("click", function() { targetLabel.removeChild(glyphSpan); })
+
+        targetLabel.appendChild(glyphSpan);
     }
 
     this.document.getElementById("clearButton").addEventListener("click",function(ev) {
