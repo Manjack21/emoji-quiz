@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link href="frontend/css/w3.css" type="text/css" rel="stylesheet">
+        <link href="frontend/css/main.css" type="text/css" rel="stylesheet">
+        <title>Emoji Quiz - Categories</title>
+    
+        <template id="templ-emoji">
+            <div class="w3-col m1 s2 glyph"></div>
+        </template>
+
+        <script src="frontend/js/categories.js"></script>
+
+        <script>
+        </script>
+    </head>
+<body>
+    
+<body class="w3-container w3-center">
+    <header class="w3-container w3-margin">
+        <h1>Emoji Quiz 😜</h1>
+        <nav class="w3-bar w3-border w3-round-xlarge">
+            <a class="w3-btn w3-bar-item" href="index.html">Back</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="w3-container w3-center">
+            <div class="w3-container" style="margin-bottom: 5rem;">
+                <label for="category">Category</label>
+                <select 
+                    class="w3-select w3-white w3-round-xlarge w3-border" 
+                    style="padding-left:2rem;"
+                    name="category_id" 
+                    id="category_id">
+
+                </select>
+            </div>
+            
+            <div class="w3-row">
+                <div class="w3-col s5 m3">Word</div>
+                <div class="w3-col s6 m8">Solution</div>
+                <div class="w3-col s1 m1">&nbsp;</div>
+            </div>
+            <ul class="w3-ul" id="emojis">
+                <li class="w3-row">
+                    <div class="w3-col s5 m3">😜😜😜</div>
+                    <div class="w3-col s6 m8">
+                        <input class="w3-input w3-border w3-round-xlarge" type="password" value="Text">
+                    </div>
+                    <div class="w3-col s1 m1 w3-xlarge">
+                        <span onclick="reveal(this)">👁</span>
+                    </div>
+                </li>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>
