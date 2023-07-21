@@ -16,12 +16,14 @@
         $data = [];
         while ($res= $categories->fetchArray(1)) {
             echo("<li class=\"w3-row\">
-                <div class=\"w3-col s5 m3\">😜😜😜</div>
-                <div class=\"w3-col s6 m8\">
-                    <input class=\"w3-input w3-border w3-round-xlarge\" type=\"password\" value=\"Text\">
+                <div class=\"w3-col s5 m3 glyph\" style=\"font-size: 3rem;\">{$res["word"]}</div>
+                <div class=\"w3-col s6 m8 glyph\">
+                    <div class=\"w3-border w3-round-xlarge\" style=\"overflow: hidden;\">
+                        <input class=\"w3-input\" type=\"password\" value=\"{$res["solution"]}\">
+                        <span class=\"revealSpan\">👁</span>
+                    </div>
                 </div>
-                <div class=\"w3-col s1 m1 w3-xlarge\">
-                    <span class=\"revealSpan\">👁</span>
+                <div class=\"w3-col s1 m1 w3-xxlarge\">
                 </div>
             </li>");
         }
