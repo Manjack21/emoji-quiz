@@ -19,10 +19,10 @@
     </header>
 
     <main>
-        <article>
+        <article class="w3-container w3-center">
             <div 
                 class="w3-row w3-card w3-center w3-border w3-border-gray w3-round-xlarge" 
-                style="margin: auto; margin-bottom:5rem; width:80%; font-size: 5rem; overflow: hidden;">
+                style="margin: auto; margin-bottom: 2rem; width:80%; font-size: 5rem; overflow: hidden;">
                 <div 
                     class="w3-col m11 s10" 
                     id="current"
@@ -34,6 +34,35 @@
                     id="clearButton">
                     &times;
                 </div>
+            </div>
+            <div id="navbar" class="w3-bar w3-round-large w3-border">
+                <a class="w3-bar-item w3-btn" onclick="saveForm(true)">🖫 Save</a>
+            </div>
+            <form
+                id="saveForm" 
+                class="w3-container w3-center w3-hide" 
+                style="margin: auto; width: 50%;"
+                method="post"
+                action="api.php/words">
+                <input id="word" name="word" type="hidden" value="">
+
+                <div class="w3-container w3-margin">
+                    <label for="solution">Solution</label>
+                    <input class="w3-input w3-border w3-round-xlarge" name="solution" placeholder="Solution">
+                </div>                
+                <div class="w3-container w3-margin">
+                    <label for="category_id">Category</label>
+                    <select class="w3-select w3-white w3-border w3-round-xlarge" id="category_id" name="category_id" placeholder="Category">
+                    </select>
+                </div>
+                <div class="w3-container w3-margin">
+                    <input onclick="saveForm(false)" class="w3-btn w3-border w3-round-xlarge" value="✖ Cancel">
+                    <input type="submit" class="w3-btn w3-blue w3-round-xlarge" value="🖫 Save">
+                </div>
+
+            </form>
+            <div style="height: 5rem;">
+                &nbsp;
             </div>
 
             <div 

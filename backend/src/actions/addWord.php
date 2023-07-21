@@ -24,6 +24,8 @@
 
         if(is_null($db->querySingle("SELECT * FROM words WHERE word = '{$word}' AND category_id = '{$category_id}'"))) {
             $db->exec("INSERT INTO words (`word`, `solution`, `category_id`) VALUES ('{$word}', '{$solution}', {$category_id})");
+            http_response_code(307);
+            header("Location: /index.html?msg=WORD_SAVED");
         }
         else {
             http_response_code(400);

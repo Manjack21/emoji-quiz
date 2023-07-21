@@ -2,13 +2,10 @@
 <?php
     // for url pattern /api.php/categories
     if(count($route) == 1) {
-        $data = [];
         $categories = $db->query("SELECT * FROM categories");
         while ($res= $categories->fetchArray(1)) {
-            array_push($data, $res);
+            echo("<option value=\"{$res["id"]}\">{$res["name"]}</option>\n");
         }
-        
-        echo json_encode($data);
     }    
     // for url pattern /api.php/categories/7/words
     else if(count($route) == 3){

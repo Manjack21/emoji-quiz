@@ -1,21 +1,23 @@
 
 
 window.addEventListener("load", async function (ev) {
-
-    
     const targetLabel = this.document.getElementById("current");
     function appendIcon(ev)
     {
         const glyphSpan = document.createElement("span");
         glyphSpan.innerHTML = ev.target.innerText;
         glyphSpan.addEventListener("click", function() { targetLabel.removeChild(glyphSpan); })
-
+        
         targetLabel.appendChild(glyphSpan);
+        document.getElementById("word").value = targetLabel.innerText.trim();
     }
 
     this.document.getElementById("clearButton").addEventListener("click",function(ev) {
         targetLabel.innerHTML = "&nbsp;";
     });
+
+    
+    this.document.getElementById("category_id").innerHTML = await (await this.fetch("/api.php/categories")).text();
 
     var emojiData = await this.fetch("/frontend/data/emoji.json");
     var emojis = await emojiData.json();
@@ -34,3 +36,16 @@ window.addEventListener("load", async function (ev) {
         list.append(emojiItem);
     });
 });
+
+function saveForm(show)
+{
+    if(show){
+        document.getElementById("saveForm").classList.remove("w3-hide");
+        document.getElementById("navbar").classList.add("w3-hide");
+    }
+    else{
+        document.getElementById("saveForm").classList.add("w3-hide");
+        document.getElementById("navbar").classList.remove("w3-hide");
+
+    }
+}
