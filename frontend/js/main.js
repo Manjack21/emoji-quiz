@@ -4,16 +4,26 @@ window.addEventListener("load", async function (ev) {
     const targetLabel = this.document.getElementById("current");
     function appendIcon(ev)
     {
+        const currentText = (targetLabel.dataset.current ?? "") + ev.target.id;
+        targetLabel.dataset.current = currentText;
+
+        targetLabel.innerHTML = currentText;
+        
+        /*
         const glyphSpan = document.createElement("span");
         glyphSpan.innerHTML = ev.target.innerText;
         glyphSpan.addEventListener("click", function() { targetLabel.removeChild(glyphSpan); })
         
         targetLabel.appendChild(glyphSpan);
+        */
+        
         document.getElementById("word").value = targetLabel.innerText.trim();
+        
     }
 
     this.document.getElementById("clearButton").addEventListener("click",function(ev) {
         targetLabel.innerHTML = "&nbsp;";
+        targetLabel.dataset.current = "";
     });
 
     

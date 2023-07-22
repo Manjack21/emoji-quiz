@@ -1,4 +1,11 @@
 [
+{"glyph": "&#x200D;", "description": "Combiner"},
+{"glyph": "&#x1F3FB;", "description": "skin light"},
+{"glyph": "&#x1F3FC;", "description": "skin medium"},
+{"glyph": "&#x1F3FD;", "description": "skin tan"},
+{"glyph": "&#x1F3FE;", "description": "skin brown"},
+{"glyph": "&#x1F3FF;", "description": "skin dark"},
+{"glyph": "😀", "description": ""},
 {"glyph": "😀", "description": ""},
 {"glyph": "😃", "description": ""},
 {"glyph": "😄", "description": ""},
@@ -1421,5 +1428,7 @@
 {"glyph": "🚩", "description": ""},
 {"glyph": "🎌", "description": ""},
 {"glyph": "🏴", "description": ""},
-{"glyph": "🏳️", "description": ""}
+{"glyph": "🏳️", "description": ""},
+{"glyph": "&#x1F1E9;&#x1F1EA;", "description": "DE"},
+{"glyph": "&#x1F1E6;&#x1F1F9;", "description": "AT"}
 ]
