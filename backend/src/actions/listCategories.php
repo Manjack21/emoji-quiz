@@ -27,7 +27,7 @@
             $categoryHint = "";
             if($showCategory) $categoryHint = "<br/><small class=\"w3-small\">({$res["category_name"]})</small>";
             
-            echo("<li class=\"w3-row\">
+            echo("<li class=\"w3-row\" data-id=\"{$res["id"]}\">
                 <div class=\"w3-col w3-hide-small m1\">&nbsp;</div>
                 <div class=\"w3-col w3-mobile m4 glyph\" style=\"font-size: 4rem;\">
                     {$res["word"]}{$categoryHint}
