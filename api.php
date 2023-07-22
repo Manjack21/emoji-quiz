@@ -3,6 +3,12 @@ include_once "backend/src/db.php";
 
 $db = new EmojiDB();
 
+if(!array_key_exists("PATH_INFO", $_SERVER)){
+    http_response_code(404);
+    echo("No endpoint found");
+    die();
+}
+else if(array_key_exists("PATH_INFO", $_SERVER))
 $route = explode('/', trim($_SERVER['PATH_INFO'], '/'));
 
 switch($route[0])
