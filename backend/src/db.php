@@ -17,6 +17,7 @@ class EmojiDB extends SQLite3
         $this->exec("INSERT OR REPLACE INTO categories (`id`, `name`) VALUES (6, 'Sayings')");
         $this->exec("INSERT OR REPLACE INTO categories (`id`, `name`) VALUES (7, 'Other')");
         $this->exec("INSERT OR REPLACE INTO categories (`id`, `name`) VALUES (8, 'Fairytales')");
+        $this->exec("INSERT OR REPLACE INTO categories (`id`, `name`) VALUES (9, 'German')");
     }
 
     
