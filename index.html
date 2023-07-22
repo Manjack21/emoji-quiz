@@ -24,7 +24,7 @@
                 class="w3-row w3-card w3-center w3-border w3-border-gray w3-round-xlarge" 
                 style="margin: auto; margin-bottom: 2rem; width:80%; font-size: 5rem; overflow: hidden;">
                 <div 
-                    class="w3-col m10 s8" 
+                    class="w3-col m11 s9" 
                     id="current"
                     style="font-family: 'NotoColorEmoji', sans-serif;">
                     &nbsp;
@@ -34,15 +34,12 @@
                     id="backButton">
                     &#x21CD;
                 </div>
-                <div 
-                    class="w3-col m1 s2 w3-light-grey"
-                    id="clearButton">
-                    &times;
-                </div>
             </div>
             <div id="navbar" class="w3-bar w3-round-large w3-border">
-                <a class="w3-bar-item w3-btn" onclick="saveForm(true)">🖫 Save</a>
-                <a class="w3-bar-item w3-btn" href="categories.html">Categories</a>
+                <a class="w3-bar-item w3-btn w3-border-right" onclick="saveForm(true)">💾 Save</a>
+                <a class="w3-bar-item w3-btn w3-border-right w3-pale-red" id="clearButton">❌ Clear</a>
+                <a class="w3-bar-item w3-btn w3-border-right" href="categories.html">🗃️ Categories</a>
+                <a class="w3-bar-item w3-btn" target="_blank" href="https://github.com/Manjack21/emoji-quiz"><img src="assets/github.png" width="24px">Visit at github.com</a>
             </div>
             <form
                 id="saveForm" 
