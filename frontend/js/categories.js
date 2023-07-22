@@ -5,7 +5,7 @@ window.addEventListener("load", async function(ev) {
     categorySelect.addEventListener("change", async function(ev){
         const categoryId = ev.target.value;
         document.getElementById("emojis").innerHTML = await (await fetch(`/api.php/categories/${categoryId}/words`)).text();
-        Array.from(document.querySelectorAll("span.revealSpan"))
+        Array.from(document.querySelectorAll(".revealSpan"))
             .forEach(s => s.addEventListener("click", reveal))
     });
     categorySelect.dispatchEvent(new Event("change"));
@@ -14,6 +14,7 @@ window.addEventListener("load", async function(ev) {
 
     function reveal(ev)
     {
-        ev.target.parentElement.parentElement.querySelector("input").type = "text";
+        const input = ev.target.parentElement.parentElement.querySelector("input");
+        input.type = input.type === "text" ? "password" : "text";
     }
 });

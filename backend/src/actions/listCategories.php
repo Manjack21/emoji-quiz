@@ -26,18 +26,19 @@
         while ($res= $categories->fetchArray(1)) {
             $categoryHint = "";
             if($showCategory) $categoryHint = "<br/><small class=\"w3-small\">({$res["category_name"]})</small>";
+            
             echo("<li class=\"w3-row\">
-                <div class=\"w3-col s5 m3 glyph\" style=\"font-size: 3rem;\">
+                <div class=\"w3-col w3-hide-small m1\">&nbsp;</div>
+                <div class=\"w3-col w3-mobile m4 glyph\" style=\"font-size: 4rem;\">
                     {$res["word"]}{$categoryHint}
                 </div>
-                <div class=\"w3-col s6 m8 glyph\">
+                <div class=\"w3-col w3-mobile m6\">
                     <div class=\"w3-border w3-round-xlarge\" style=\"overflow: hidden;\">
                         <input class=\"w3-input\" type=\"password\" value=\"{$res["solution"]}\">
-                        <span class=\"revealSpan\">👁</span>
+                        <div class=\"revealSpan glyph\">👁</div>
                     </div>
                 </div>
-                <div class=\"w3-col s1 m1 w3-xxlarge\">
-                </div>
+                <div class=\"w3-col w3-hide-small m1\">&nbsp;</div>
             </li>");
         }
     }
