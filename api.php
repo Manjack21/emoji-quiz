@@ -17,7 +17,17 @@ switch($route[0])
         switch($_SERVER["REQUEST_METHOD"])
         {
             case "POST":  
-                include "backend/src/actions/addWord.php";
+                if(!array_key_exists("REQUEST_METHOD", $_POST)) {
+                    include "backend/src/actions/addWord.php";
+                }
+                else if($_POST["REQUEST_METHOD"] == "DELETE") {
+                    include "backend/src/actions/deleteWord.php";
+                }
+                else {
+                    http_response_code(405);
+                    echo("Method not allowed");                
+                    break;
+                }
                 break;
             default:
                 http_response_code(405);

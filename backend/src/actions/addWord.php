@@ -1,10 +1,6 @@
 <?php
-
-    if($_SERVER["REQUEST_METHOD"] != "POST"){
-        http_response_code(405);
-        echo("Method not allowed");
-    }
-    else if(!key_exists("word", $_POST) or $_POST["word"] == ''){
+    
+    if(!key_exists("word", $_POST) or $_POST["word"] == ''){
         http_response_code(400);
         echo("No emoji word given");
     }
