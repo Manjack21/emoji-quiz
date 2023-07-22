@@ -43,7 +43,7 @@ window.addEventListener("load", async function (ev) {
     
     this.document.getElementById("category_id").innerHTML = await (await this.fetch("/api.php/categories")).text();
 
-    var emojiData = await this.fetch("/frontend/data/emoji.json");
+    var emojiData = await this.fetch("data/emoji.json");
     var emojis = await emojiData.json();
     const emojiTemplate = this.document.getElementById("templ-emoji");
     const list = this.document.getElementById("emoji-list");

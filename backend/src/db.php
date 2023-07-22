@@ -5,7 +5,7 @@ class EmojiDB extends SQLite3
 {
     function __construct()
     {
-        $this->open("backend/data/emoji.db", SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
+        $this->open("data/emoji.db", SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
 
         $this->exec("CREATE TABLE IF NOT EXISTS words (`id` INTEGER PRIMARY KEY, `word`, `solution`, `category_id` INTEGER NOT NULL)");
         $this->exec("CREATE TABLE IF NOT EXISTS categories (`id` INTEGER PRIMARY KEY, `name`)");
