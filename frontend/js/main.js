@@ -2,6 +2,8 @@
 
 window.addEventListener("load", async function (ev) {
     const targetLabel = this.document.getElementById("current");
+    const previewLabel = this.document.getElementById("currentPreview");
+
     var history = [];
     function appendIcon(ev)
     {
@@ -10,16 +12,13 @@ window.addEventListener("load", async function (ev) {
 
         const newText = currentText + ev.target.id;
         setCurrentText(newText);
-        
-        /*
-        const glyphSpan = document.createElement("span");
-        glyphSpan.innerHTML = ev.target.innerText;
-        glyphSpan.addEventListener("click", function() { targetLabel.removeChild(glyphSpan); })
-        
-        targetLabel.appendChild(glyphSpan);
-        */       
-        
     }
+
+    this.window.addEventListener("scroll", function(ev){
+        const isVisible = !previewLabel.classList.contains("w3-hide");
+        if(window.scrollY > 200 && !isVisible) previewLabel.classList.remove("w3-hide")
+        else if(window.scrollY <= 200 && isVisible) previewLabel.classList.add("w3-hide")
+    });
 
     this.document.getElementById("clearButton").addEventListener(
         "click",
@@ -38,6 +37,7 @@ window.addEventListener("load", async function (ev) {
     function setCurrentText(text){
         targetLabel.dataset.current = text;
         targetLabel.innerHTML = (text === '' ? "&nbsp;" : text);
+        previewLabel.innerHTML = (text === '' ? "&nbsp;" : text);
         document.getElementById("word").value = targetLabel.innerText.trim();
     }
     

@@ -8,3 +8,14 @@ div.glyph {
     font-family: "NotoColorEmoji", sans-serif;
     font-size: 2rem;
 }
+
+div.em-preview {
+    position:fixed; 
+    top:0px; 
+    left:0px; 
+    
+    width:100%;
+
+    font-family: 'NotoColorEmoji', sans-serif; 
+    font-size:2rem;
+}
