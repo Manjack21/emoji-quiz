@@ -1,6 +1,23 @@
 
+var preload = function(url, callback){
+}
 
 window.addEventListener("load", async function (ev) {
+    window.setTimeout(() => {
+        console.log("Start loading")
+
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'frontend/css/main.css';
+
+        link.addEventListener('load', () => {
+            document.getElementById('loading-indicator').classList.add('w3-hide');
+            document.getElementById('emoji-list').classList.remove('w3-hide');
+        });
+
+        document.head.appendChild(link);
+    }, 500);
+
     const targetLabel = this.document.getElementById("current");
     const previewLabel = this.document.getElementById("currentPreview");
 
@@ -41,7 +58,7 @@ window.addEventListener("load", async function (ev) {
         document.getElementById("word").value = targetLabel.innerText.trim();
     }
     
-    this.document.getElementById("category_id").innerHTML = await (await this.fetch("/api.php/categories")).text();
+    this.document.getElementById("category_id").innerHTML = await (await this.fetch("api.php/categories")).text();
 
     var emojiData = await this.fetch("data/emoji.json");
     var emojis = await emojiData.json();
@@ -54,12 +71,40 @@ window.addEventListener("load", async function (ev) {
         /** @type {HTMLElement} */
         const emojiColItem = emojiItem.querySelector("div.glyph");
         emojiColItem.id = e.glyph;
-        emojiColItem.dataset.description = e.description;
+        emojiColItem.dataset.description = e.description.toLowerCase();
         emojiColItem.innerHTML = e.glyph;
         emojiColItem.addEventListener("click", appendIcon);
         list.append(emojiItem);
     });
 });
+
+var searchDelay;
+function search()
+{
+    window.clearTimeout(searchDelay);
+    searchDelay = window.setTimeout(
+        () => {
+            var searchterm = document.getElementById('searchterm').value;
+            
+            Array.from(document.getElementById('emoji-list').childNodes)
+                .filter(node => node.nodeType == Node.ELEMENT_NODE)
+                .forEach(/** @type {ChildNode} */ node => {
+                    console.log(node);
+
+                    if(node.dataset.description.indexOf(searchterm) > -1 || searchterm == '')
+                    {
+                        node.classList.remove('w3-hide');
+                    }
+                    else
+                    {
+                        node.classList.add('w3-hide');
+                    }
+                }
+            );
+        },
+        800
+    );
+}
 
 function saveForm(show)
 {

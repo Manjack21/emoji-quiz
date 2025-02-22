@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="frontend/css/w3.css" type="text/css" rel="stylesheet">
-    <link href="frontend/css/main.css" type="text/css" rel="stylesheet">
     <title>Emoji Quiz</title>
+    <link href="frontend/css/loading.css" type="text/css" rel="stylesheet">
+    
     <script src="frontend/js/main.js"></script>
 
     <template id="templ-emoji">
@@ -45,6 +46,10 @@
                 <a class="w3-bar-item w3-mobile w3-btn" href="categories.html">🗃️ Categories</a>
                 <a class="w3-bar-item w3-mobile w3-btn" target="_blank" href="https://github.com/Manjack21/emoji-quiz"><img src="assets/github.png" width="24px">Visit at github.com</a>
             </div>
+
+            <div>
+                <input class="w3-input w3-border w3-round-xlarge" id="searchterm" oninput="search()">
+            </div>
             <form
                 id="saveForm" 
                 class="w3-container w3-center w3-hide" 
@@ -63,7 +68,7 @@
                     </select>
                 </div>
                 <div class="w3-container w3-margin">
-                    <input onclick="saveForm(false)" class="w3-btn w3-border w3-round-xlarge" value="✖ Cancel">
+                    <input type="button" onclick="saveForm(false)" class="w3-btn w3-border w3-round-xlarge" value="✖ Cancel">
                     <input type="submit" class="w3-btn w3-blue w3-round-xlarge" value="🖫 Save">
                 </div>
 
@@ -72,10 +77,11 @@
                 &nbsp;
             </div>
 
+            <div class="lds-ring" id="loading-indicator"><div></div><div></div><div></div><div></div></div>
             <div 
-                class="w3-row-padding" 
+                class="w3-row-padding w3-hide" 
                 id="emoji-list" 
-                style="margin-left: 3rem; margin-right: 3rem;">
+                style="margin-left: 3rem; margin-right: 3rem;">                
             </div>
         </article>
     </main>
